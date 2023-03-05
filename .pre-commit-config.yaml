@@ -1,1 +1,49 @@
-# TODO
+repos:
+
+  # General repo hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: check-added-large-files
+    -   id: check-case-conflict
+    -   id: pretty-format-json
+    -   id: detect-private-key
+    -   id: name-tests-test
+    -   id: check-ast
+
+  # Used for automated import sorting
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+
+  # Used for automated python linting
+  - repo: https://github.com/ambv/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+        files: neo/
+
+  # Requires PEP8 code management
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+    - id: flake8
+      files: neo/
+      args: ["--ignore=F821,W503,E501"]
+
+  # Requires PEP8 code management
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.0.1
+    hooks:
+    - id: mypy
+      files: neo/
+
+  # Requires that docstrings are written
+  - repo: https://github.com/econchick/interrogate
+    rev: 1.5.0
+    hooks:
+    - id: interrogate
+      files: neo/
