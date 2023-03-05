@@ -1,3 +1,5 @@
+![interrogate](badges/interrogate_badge.svg)
+
 # 🚦 Traffic Network MARL
 
 ## Overview

@@ -24,26 +24,25 @@ repos:
     rev: 23.1.0
     hooks:
       - id: black
-        files: neo/
+        files: networkrl/
 
   # Requires PEP8 code management
   - repo: https://github.com/pycqa/flake8
     rev: 6.0.0
     hooks:
     - id: flake8
-      files: neo/
-      args: ["--ignore=F821,W503,E501"]
+      files: networkrl/
 
   # Requires PEP8 code management
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.0.1
     hooks:
     - id: mypy
-      files: neo/
+      files: networkrl/
 
   # Requires that docstrings are written
   - repo: https://github.com/econchick/interrogate
     rev: 1.5.0
     hooks:
     - id: interrogate
-      files: neo/
+      files: networkrl/

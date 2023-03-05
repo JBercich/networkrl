@@ -1,8 +1,37 @@
+# =========================================================================== #
+# pyproject.toml                                                              #
+# =========================================================================== #
+# Poetry project management is used for maintaining dependencies and managing #
+# package distribution.                                                       #
+# =========================================================================== #
+
+# Distribution information
+
 [tool.poetry]
 name = "networkrl"
 version = "0.0.1"
-description = ""
-authors = []
+description = "multi-agent reinforcement learning for network environments"
+# Contributors
+authors = [
+    "Joshua Bercich <joshbercich@gmail.com>"
+]
+maintainers = [
+    "Joshua Bercich <joshbercich@gmail.com>"
+]
+# Additional fields
+readme = "README.md"
+keywords = [
+    "reinforcement-learning",
+    "simulation"
+]
+# Links
+homepage = "https://github.com/JBercich/networkrl"
+repository = "https://github.com/JBercich/networkrl"
+documentation = "https://github.com/JBercich/networkrl"
+
+# =========================================================================== #
+
+# Dependencies
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -12,20 +41,20 @@ mypy = "^1.0.1"
 black = "^23.1.0"
 isort = "^5.12.0"
 pre-commit = "^3.1.1"
+flake8 = "^6.0.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+# =========================================================================== #
 
-# Dependency-specific options for pre-commit hooks
-
+# Tool configuration
 
 [tool.black]
 # `black` dependency options
 line-length = 88
 target-version = ["py311"]
-
 
 [tool.mypy]
 # `mypy` dependency options
@@ -34,29 +63,23 @@ follow_imports = "skip"
 ignore_missing_imports = true
 follow_imports_for_stubs = false
 
-
 [tool.isort]
 # `isort` dependency options
 profile = "black"
 
-
 [tool.flake8]
 # `flake8` dependency options
-## F821 - prevents @profile decorators with mprof actions in test runs
 ## W503 - conflicts with Black linting on binary operators on newlines
-## E501 - Some queries exceed the line length
-ignore = ["F821", "W503", "E501", "E501"]
-
+ignore = ["W503"]
 
 [tool.interrogate]
 # `interrogate` dependency options
 verbose = 1
 fail-under = 0
 badge-format = "svg"
-omit-covered-files = true
 ignore-init-method = true
 ignore-init-module = true
-ignore-nested-classes = true
+omit-covered-files = false
 ignore-nested-functions = true
 ignore-property-decorators = true
 generate-badge = "badges/"
