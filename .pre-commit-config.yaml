@@ -32,6 +32,7 @@ repos:
     hooks:
     - id: flake8
       files: networkrl/
+      args: ["--ignore=W503,E501"]
 
   # Requires PEP8 code management
   - repo: https://github.com/pre-commit/mirrors-mypy

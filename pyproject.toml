@@ -36,6 +36,8 @@ documentation = "https://github.com/JBercich/networkrl"
 [tool.poetry.dependencies]
 python = "3.10.0"
 torch = "^1.13.1"
+gymnasium = "^0.27.1"
+matplotlib = "^3.7.1"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.0.1"
@@ -74,7 +76,8 @@ profile = "black"
 [tool.flake8]
 # `flake8` dependency options
 ## W503 - conflicts with Black linting on binary operators on newlines
-ignore = ["W503"]
+## E501 - line length used by this repo is 88
+ignore = ["W503", "E501"]
 
 [tool.interrogate]
 # `interrogate` dependency options
