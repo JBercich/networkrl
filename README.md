@@ -17,6 +17,8 @@ To prepare a suitable python enviroment for development, this project uses `poet
 ```bash
 # From root project directory in ^3.11 environment
 pip install poetry==1.4.0
+# pip install torch
+# conda install torch
 poetry install --no-root --with dev
 ```
 

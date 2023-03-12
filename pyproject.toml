@@ -34,7 +34,8 @@ documentation = "https://github.com/JBercich/networkrl"
 # Dependencies
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "3.10.0"
+torch = "^1.13.1"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.0.1"
